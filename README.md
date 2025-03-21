@@ -23,4 +23,30 @@ Run the tests with the command: `pytest`.
 **Visualization:**  
 The charts are saved in the `charts/` folder.
 
-Translated with DeepL.com (free version)
+# Project Structure
+
+```plaintext
+silk_pipeline/
+├── config.py              # Loads environment variables from .env
+├── logging_config.py      # Configures structured logging for the project
+├── main.py                # Entry point of the application
+├── README.md              # This file
+├── requirements.txt       # Python dependencies
+├── Dockerfile             # Docker build instructions
+├── docker-compose.yml     # Docker Compose configuration
+├── .env.example           # Example environment variables file
+├── db/
+│   └── mongodb_client.py  # MongoDB connection helper
+├── deduplication/
+│   └── deduper.py         # Deduplication logic
+├── fetcher/
+│   ├── async_qualys_client.py      # Asynchronous API client for Qualys
+│   └── async_crowdstrike_client.py # Asynchronous API client for Crowdstrike
+├── normalization/
+│   └── normalizer.py      # Data normalization logic
+├── visualization/
+│   └── charts.py          # Chart generation with matplotlib
+└── tests/
+    ├── test_normalizer.py # Unit tests for normalization functions
+    └── test_deduper.py    # Unit tests for deduplication logic
+
